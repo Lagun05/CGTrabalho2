@@ -1,0 +1,19 @@
+RT 1.0
+#SIZE  ! Teste para uma esfera e um plano
+300 300
+#BACKGROUND
+20. 20. 40.  
+#SURFACE
+0 80. 80. 80.  220. 220. 220.  200. 200. 200.  15. 1. 0. 0. 
+#LIGHT
+-20. 30.  10. 255. 255. 255.
+#PLY
+0 ../../resources/esphere.ply     .05  .05  .05       2.   -7.   -11.      0.   0.   0.
+#FILM
+5. 5.
+#POSITION
+0. 3. 5. 0. 0. 0.  0. 1. 1.   !up
+#GRID
+1 1
+#LENS
+45

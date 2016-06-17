@@ -9,6 +9,7 @@
 #include "Luz.h"
 #include "io.h"
 #include "Esfera.h"
+#include "Cilindro.h"
 #include "Triangulo.h"
 #include "CaixaParalela.h"
 #include "PlyParser.h"
@@ -69,6 +70,8 @@ tok Token(const QString& linha)
 
     if(linha == "#SPHERE") return tok_SPHERE;
 
+    if(linha == "#CYLINDER") return tok_CYLINDER;
+
     if(linha == "#LIGHT") return tok_LIGHT;
 
     if(linha == "#SIZE") return tok_SIZE;
@@ -102,6 +105,7 @@ void LeInfo( tok tag, Cenario *hcenario, Camara *hcamara, int hlinhas, int hcolu
   Material *mat1;
   Luz *luz1;
   Esfera *esf1;
+  Cilindro *cil1;
   CaixaParalela *cxp1;
   Triangulo *tri1;
 
@@ -149,6 +153,14 @@ void LeInfo( tok tag, Cenario *hcenario, Camara *hcamara, int hlinhas, int hcolu
       p1 = LePonto(linha); //Centro
       esf1 = new Esfera( a, e, p1 );
       hcenario->InsereObjeto( esf1 );
+      return;
+    case tok_CYLINDER:
+      linha >> a >> p;
+      linha >> e;      //Raio
+      linha >> f;   // Altura
+      p1 = LePonto(linha); //Centro
+      cil1 = new Cilindro( a, e, f, p1 );
+      hcenario->InsereObjeto( cil1 );
       return;
     case tok_BOX:
       linha >> a;

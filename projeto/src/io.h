@@ -21,6 +21,7 @@ typedef enum {
   tok_SURFACE,
   tok_LIGHT,
   tok_SPHERE,
+  tok_CYLINDER,
   tok_BOX,
   tok_TRIANGLE,
   tok_POSITION,

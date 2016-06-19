@@ -21,6 +21,7 @@ class Objeto_3D {
     int indice_textura;
     Ponto_3D centro;
     float raio;
+    float altura;
  public:
     enum IntersectionMode{
         Nearest,
@@ -40,10 +41,12 @@ class Objeto_3D {
     //* Funcoes virtuais que podem ser reimplementadas pelos herdeiros
     virtual int getIndiceMaterial() const;
     virtual float getRaio() const;
+    virtual float getAltura() const;
     virtual const Ponto_3D& getCentro() const;
     virtual void setCentro(const Ponto_3D& _centro);
     virtual void setIndiceTextura(int indice);
     virtual void setRaio(float _raio);
+    virtual void setAltura(float _altura);
     virtual TexturePoint pontoTextura(const Ponto_3D& ponto) const;
 };
 

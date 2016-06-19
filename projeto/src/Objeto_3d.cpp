@@ -34,6 +34,11 @@ float Objeto_3D::getRaio() const
     return raio;
 }
 
+float Objeto_3D::getAltura() const
+{
+    return altura;
+}
+
 const Ponto_3D& Objeto_3D::getCentro() const
 {
     return centro;
@@ -52,6 +57,11 @@ void Objeto_3D::setIndiceTextura(int indice)
 void Objeto_3D::setRaio(float _raio)
 {
     raio = _raio;
+}
+
+void Objeto_3D::setAltura(float _altura)
+{
+    altura = _altura;
 }
 
 TexturePoint Objeto_3D::pontoTextura(const Ponto_3D& ponto) const
